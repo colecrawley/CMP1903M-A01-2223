@@ -11,8 +11,7 @@ namespace CMP1903M_A01_2223
     {
         static void Main(string[] args)
         {
-            Card newcard = new Card();
-            System.Console.WriteLine(decksetup());
+            //Creating pack 
         }
     }
 }

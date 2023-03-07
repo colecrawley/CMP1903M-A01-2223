@@ -8,82 +8,91 @@ namespace CMP1903M_A01_2223
 {
     class Pack : Card
     {
-        int total_cards = 52; //total number of playing cards
+        const int total_cards = 52; //total number of playing cards
         private Card[] deck; // all of the playing cards, private so the cards don't get changed
 
-        List<Card> pack;
+        public static List<Card> pack = new List<Card>();
+        public static List<Card> split_deck1 = new List<Card>();
+        public static List<Card> split_deck2 = new List<Card>();
+
         public Pack()
         {
             //Initialise the card pack here
 
-            deck = new Card[total_cards];
+            deck = new Card[total_cards]; // stores all the cards
         }
 
-        public Card[] getpack
+        public Card[] Getpack //retrieving cards
         {
-
             get
             {
                 return deck; // get deck
             }
-             
         }
-        
-        public void decksetup() // creation of cards
+        public void Decksetup() // creation of cards
         {
-
-            for (int i = 0; i < suitvalues.Length; i++)
+            int i = 0;
+            foreach (CardSuits s in Enum.GetValues(typeof(CardSuits)))
             {
-                for (int j = 0; i < cardvalues.Length; i++);
+                foreach (Cardvalues v in Enum.GetValues(typeof(Cardvalues)))
                 {
-                    deck[i][j] = new Card {Suit = i, Value = j};
+                    deck[i] = new Card { Suit = (int)s, Value = (int)v };
+                    i++; // index i should increment up to 52 cards
                 }
             }
-
         }
-        
-        public static bool shuffleCardPack(int typeOfShuffle)
+        public static bool ShuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
             // 1. Fisher-Yates shuffle
             // 2. Riffle shuffle
             // 3. No shuffle
-
-
-            // PUT THIS IN A LOOP
-            System.Console.WriteLine("Choose what type of shuffle you want to use: \n1. Fisher-Yates shuffle\n2. Riffle Shuffle\n3. No Shuffle\n");
-
-            try // not sure if the user input will automaticaly be int or string
+            if (typeOfShuffle == 1)
             {
-                int typeOfShuffle = Console.ReadLine();
+                System.Console.WriteLine("You have chosen the Fisher-Yates Shuffle");
+                Random rand = new Random();
+                for (int i = 0; i < pack.Count; i++)
+                {
+                    int j = rand.Next(i, pack.Count);
+                    (pack[j], pack[i]) = (pack[i], pack[j]);
+                }
+                return true;
             }
-            catch
+            else if (typeOfShuffle == 2)
             {
-                int.Parse(typeOfShuffle);
-            }
-            
-            if (typeOfShuffle == "1")
-            {
-                typeOfShuffle = "Fisher-Yates Shuffle";
-            }
-            if (typeOfShuffle == "2")
-            {
-                typeOfShuffle = "Riffle Shuffle";
-            }
-            if (typeOfShuffle == "3")
-            {
-                typeOfShuffle = "No Shuffle";
-            }
+                System.Console.WriteLine("You have chosen the Riffle Shuffle");
+                // need to divide the pack of cards into two sets
+                split_deck1.AddRange(pack.GetRange(0, 26));
+                split_deck2.AddRange(pack.GetRange(27,52));
 
-            System.Console.WriteLine("You have chosen " + usershuffle);
-
+                int i = 0;
+                int j = 0;
+                while (i < 52)
+                {
+                    pack[i] = split_deck1[j];
+                    i++;
+                    pack[i] = split_deck2[j];
+                    i++;
+                    j++;
+                }
+                return true;
+            }
+            else if (typeOfShuffle == 3)
+            {
+                System.Console.WriteLine("You have chosen not to shuffle the deck of cards");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        public static Card deal()
+            public static Card Deal()
         {
             //Deals one card
 
         }
-        public static List<Card> dealCard(int amount)
+        public static List<Card> DealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
         }
