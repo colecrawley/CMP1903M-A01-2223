@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace CMP1903M_A01_2223
 {
     class Program
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("hello world");
+            Card newcard = new Card();
+            System.Console.WriteLine(decksetup());
         }
     }
 }
