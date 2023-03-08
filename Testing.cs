@@ -9,12 +9,12 @@ using static CMP1903MA012223.Card;
 
 namespace CMP1903MA012223
 {
-    static class Program
+    static class Testing
     {
         static void Main(string[] args)
         {
             //Creating pack 
-            Pack Deckpack = new Pack();
+            Pack deck = new Pack();
 
             //Default arrangement of the cards
             System.Console.WriteLine("\n\tDefault arrangement\n");
@@ -49,7 +49,7 @@ namespace CMP1903MA012223
             Pack.DealCard(6);
             for (int i = 0; i < Pack.dealt_cards.Count; i++)
             {
-                Deckpack.Currentcard();
+                deck.Currentcard();
             }
             System.Console.WriteLine("\n\tDisplay pack\n");
             Pack.Showcards();
@@ -57,13 +57,13 @@ namespace CMP1903MA012223
             System.Console.WriteLine("\n\tDrawn cards\n");
             for (int i = 0; i < Pack.drawncards.Count; i++)
             {
-                Deckpack.Currentcard();
+                deck.Currentcard();
             }
 
             System.Console.WriteLine("\n\tDealt cards\n");
             for (int i = 0; i < Pack.dealt_cards.Count; i++)
             {
-                Deckpack.Currentcard();
+                deck.Currentcard();
             }
         }
     }
