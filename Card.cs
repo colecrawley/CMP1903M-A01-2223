@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CMP1903MA012223.Card;
+using static CMP1903MA012223.Pack;
 
-namespace CMP1903M_A01_2223
+namespace CMP1903MA012223
 {
     class Card
     {
@@ -16,8 +18,8 @@ namespace CMP1903M_A01_2223
         //Suit: numbers 1 - 4
         //The 'set' methods for these properties could have some validation
 
-        private int val;
-        private int suit_;
+        private readonly int val;
+        private readonly int suit_;
         public int number;
 
         public enum Cardvalues

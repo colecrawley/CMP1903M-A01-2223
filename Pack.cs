@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CMP1903MA012223.Card;
+using static CMP1903MA012223.Pack;
 
-namespace CMP1903M_A01_2223
+namespace CMP1903MA012223
 {
     class Pack : Card
     {
-        const int total_cards = 52; //total number of playing cards
+        readonly int total_cards = 52; //total number of playing cards
         private static Card[] deck; // all of the playing cards, private so the cards don't get changed
 
         public static List<Card> pack = new List<Card>();
@@ -133,12 +135,6 @@ namespace CMP1903M_A01_2223
         public static List<Card> DealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
-            //ask user how many cards they want to deal
-
-            System.Console.WriteLine("Enter the amount of cards you want to receive: ");
-            int user_cards = Convert.ToInt32(Console.ReadLine());
-            System.Console.WriteLine("You have chosen " + user_cards + " cards\n");
-            user_cards = amount;
 
             userhand = new Card[amount];
             if (pack.Count < amount)

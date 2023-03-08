@@ -1,13 +1,14 @@
 {
   "version": "0.2.0",
   "configurations": [
+    
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/colecrawley/Downloads/CMP1903M A01 2223/CMP1903M A01 2223",
-      "program": "/Users/colecrawley/Downloads/CMP1903M A01 2223/CMP1903M A01 2223/build/Debug/outDebug"
+      "cwd": "/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223",
+      "program": "/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/build/Debug"
     }
   ]
 }
