@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static CMP1903MA012223.Pack;
 using static CMP1903MA012223.Card;
+using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {

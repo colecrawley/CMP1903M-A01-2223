@@ -6,8 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static CMP1903MA012223.Card;
-using static CMP1903MA012223.Pack;
+
+
+
 
 namespace CMP1903MA012223
 {
