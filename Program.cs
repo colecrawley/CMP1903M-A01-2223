@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace CMP1903M_A01_2223
 {
     class Program
@@ -12,6 +11,7 @@ namespace CMP1903M_A01_2223
         static void Main(string[] args)
         {
             //Creating pack 
+            System.Console.WriteLine("Hello world");
         }
     }
 }

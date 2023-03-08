@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Runtime.CompilerServices;
+using System.Globalization;
 using System.Reflection.Emit;
 using System;
 using System.Collections.Generic;
@@ -15,32 +16,43 @@ namespace CMP1903M_A01_2223
         //Suit: numbers 1 - 4
         //The 'set' methods for these properties could have some validation
 
-        public int val;
-        public int suit;
+        private int val;
+        private int suit_;
         public int number;
 
         public enum Cardvalues
         {
             two = 2, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace
         }
-
         public enum CardSuits
         {
             hearts, spades, diamonds,clubs
+        }
+        public void Currentcard()
+        {
+            int enumvalue = Value;
+            var cardvalues = (Cardvalues)Value;
+            string stringValue = cardvalues.ToString();
+
+            int enumsuit = Suit;
+            var cardsuits = (CardSuits)Suit;
+            string stringSuit = cardsuits.ToString();
+
+            System.Console.WriteLine(stringValue + " of " + stringSuit);
         }
 
         public int Value
         {
             get
             {
-                return Value;
+                return val;
             }
 
             set
             {
                 if (number < 1 || number > 13)
                 {
-                    throw new ArgumentOutOfRangeException("That is out of bounds, value must be between 1 - 13");
+                    System.Console.WriteLine("That is out of bounds, value must be between 1 - 13");
                 }
                 else
                 {
@@ -52,13 +64,13 @@ namespace CMP1903M_A01_2223
         {
             get
             {
-                return Suit;
+                return suit_;
             }
             set
             {
                 if (number < 1 || number > 4)
                 {
-                    throw new ArgumentOutOfRangeException("That is out of bounds, suit must be between 1 - 4");
+                    System.Console.WriteLine("That is out of bounds, suit must be between 1 - 4");
                 }
                 else
                 {
@@ -66,6 +78,5 @@ namespace CMP1903M_A01_2223
                 }
             }
         }
-
-    } 
+    }
 }
