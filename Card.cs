@@ -19,18 +19,24 @@ namespace CMP1903MA012223
         //Suit: numbers 1 - 4
         //The 'set' methods for these properties could have some validation
 
-        private readonly int val;
-        private readonly int suit_;
-        public int number;
+        private int val;
+        private int suit_;
 
-        public enum Cardvalues
+        /*public enum Cardvalues
         {
             two = 2, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace
         }
         public enum CardSuits
         {
-            hearts, spades, diamonds,clubs
+            hearts,
+            spades,
+            diamonds,
+            clubs
         }
+
+        public Cardvalues _Cardvalues { get; set; }
+        public CardSuits _CardSuits { get; set; }
+
         public void Currentcard()
         {
             int enumvalue = Value;
@@ -42,7 +48,22 @@ namespace CMP1903MA012223
             string stringSuit = cardsuits.ToString();
 
             System.Console.WriteLine(stringValue + " of " + stringSuit);
+        }*/
+
+        //list instead of enumeration
+
+        //public static string[] cardvalues = { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "jack", "queen", "king" };
+        //public static string[] cardsuits = { "hearts", "spades", "diamonds", "clubs" };
+
+        
+        public void Currentcard()
+        {
+            string[] cardvalues = { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "jack", "queen", "king" };
+            string[] cardsuits = { "hearts", "spades", "diamonds", "clubs" };
+
+            System.Console.WriteLine(cardvalues[Value - 1] + " of "+ cardsuits[Suit-1]);
         }
+
 
         public int Value
         {
@@ -53,13 +74,14 @@ namespace CMP1903MA012223
 
             set
             {
-                if (number < 1 || number > 13)
+                if (value >= 1 || value <= 13)
                 {
-                    System.Console.WriteLine("That is out of bounds, value must be between 1 - 13");
+                    val = value;
                 }
                 else
                 {
-                    Value = number;
+                    System.Console.WriteLine("That is out of bounds, value must be between 1 - 13");
+
                 }
             }
         }
@@ -71,15 +93,23 @@ namespace CMP1903MA012223
             }
             set
             {
-                if (number < 1 || number > 4)
+                if (value >= 1 || value <= 4)
                 {
-                    System.Console.WriteLine("That is out of bounds, suit must be between 1 - 4");
+                    suit_ = value;
+                    
                 }
                 else
                 {
-                    Suit = number;
+                    System.Console.WriteLine("That is out of bounds, suit must be between 1 - 4");
                 }
             }
         }
+
+        public Card(int i, int j)
+        {
+            Value = i;
+            Suit = j;
+        }
+
     }
 }

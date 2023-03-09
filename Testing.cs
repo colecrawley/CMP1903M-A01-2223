@@ -21,7 +21,7 @@ namespace CMP1903MA012223
             System.Console.WriteLine("\n\tDefault arrangement\n");
             Pack.Showcards();
 
-            //Ask user what type of shuffle they want
+            /*//Ask user what type of shuffle they want
             Pack.Decksetup();
 
             //Different shuffles
@@ -65,7 +65,7 @@ namespace CMP1903MA012223
             for (int i = 0; i < Pack.dealt_cards.Count; i++)
             {
                 deck.Currentcard();
-            }
+            }*/
         }
     }
 }

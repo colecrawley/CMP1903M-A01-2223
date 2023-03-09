@@ -9,45 +9,62 @@ using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {
-    class Pack : Card
+    class Pack //: Card
     {
-        readonly int total_cards = 52; //total number of playing cards
-        private static Card[] deck; // all of the playing cards, private so the cards don't get changed
+        //readonly int total_cards = 52; //total number of playing cards
+        //private static Card[] deck; // all of the playing cards, private so the cards don't get changed
 
         public static List<Card> pack = new List<Card>();
         public static List<Card> split_deck1 = new List<Card>();
         public static List<Card> split_deck2 = new List<Card>();
         public static List<Card> drawncards = new List<Card>();
         public static List<Card> dealt_cards = new List<Card>();
-        private static Card[] userhand;
 
         public Pack()
         {
             //Initialise the card pack here
 
-            deck = new Card[total_cards]; // stores all the cards
+            //deck = new Card[total_cards]; // stores all the cards
+
+            int i = 1;
+            int j = 1;
+
+            while (j != 5)
+            {
+                pack.Add(new Card(i, j));
+                i++;
+                if (i == 13)
+                {
+                    i = 1;
+                    j++;
+                }
+            }
         }
 
-        public static Card[] Getpack //retrieving cards
+        /*public static Card[] Getpack //retrieving cards
         {
             get
             {
                 return deck; // get deck
             }
-        }
+        }*/
         public static void Decksetup() // creation of cards
         {
-            int i = 0;
+            /*int i = 0;
             foreach (CardSuits s in Enum.GetValues(typeof(CardSuits)))
             {
                 foreach (Cardvalues v in Enum.GetValues(typeof(Cardvalues)))
                 {
-                    deck[i] = new Card { Suit = (int)s, Value = (int)v };
+                    enumdeck = deck[i];
+                    enumdeck = new Card { _CardSuits = s, _Cardvalues = v };
                     i++; // index i should increment up to 52 cards
                 }
-            }
+            }*/
+            //chagen enum to list first
+
             System.Console.WriteLine("What kind of shuffle do you want to use: \n1. Fisher-Yates shuffle\n2. Riffle shuffle\n3. No shuffle\n");
             int answer = Convert.ToInt32(Console.ReadLine());
+
             if (answer == 1)
             {
                 ShuffleCardPack(1);
@@ -60,11 +77,8 @@ namespace CMP1903MA012223
             {
                 ShuffleCardPack(3);
             }
-            else
-            {
-                throw new ArgumentException("The value you have inputted is not one of the options available");
-            }
         }
+        
         public static bool ShuffleCardPack(int typeOfShuffle)
         {
             //Shuffles the pack based on the type of shuffle
@@ -87,7 +101,7 @@ namespace CMP1903MA012223
             {
                 System.Console.WriteLine("You have chosen the Riffle Shuffle");
                 // need to divide the pack of cards into two sets
-                split_deck1.AddRange(pack.GetRange(0, 26));
+                split_deck1.AddRange(pack.GetRange(1, 26)); //FIX THIS!!
                 split_deck2.AddRange(pack.GetRange(27,52));
 
                 int i = 0;
@@ -112,11 +126,12 @@ namespace CMP1903MA012223
                 return false;
             }
         }
-            public static Card Deal()
+
+        public static Card Deal()
         {
             //Deals one card
 
-            Decksetup(); //Create the deck
+            //Decksetup(); //Create the deck
             Card Stack = pack[-1];
             pack.RemoveAt(-1);
             dealt_cards.Add(Stack);
@@ -129,15 +144,16 @@ namespace CMP1903MA012223
             int i = 0;
             foreach (Card card in pack)
             {
-                card.Currentcard();
+                card.Currentcard(); //double check this
                 i++;
             }
         }
+
         public static List<Card> DealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
 
-            userhand = new Card[amount];
+            
             if (pack.Count < amount)
             {
                 throw new ArgumentOutOfRangeException("Impossible to draw " + amount + "cards because there are not enough cards left in the pack");
@@ -146,12 +162,13 @@ namespace CMP1903MA012223
             {
                 for (int i = 1; i <= amount; i++)
                 {
-                    userhand[i] = Getpack[i];
+                    Card Stack = pack[-1];
+                    pack.RemoveAt(-1);
+                    dealt_cards.Add(Stack);
                 }
-                dealt_cards.AddRange(userhand);
+                dealt_cards.AddRange(dealt_cards);
+                return dealt_cards;
             }
-            drawncards.AddRange(dealt_cards);
-            return dealt_cards;
         }
     }
 }
