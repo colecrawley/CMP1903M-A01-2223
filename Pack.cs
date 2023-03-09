@@ -76,6 +76,7 @@ namespace CMP1903MA012223
 
             else if (typeOfShuffle == 3)
             {
+
                 System.Console.WriteLine("\nYou have chosen not to shuffle the deck of cards\n");
                 return true;
             }
@@ -90,8 +91,8 @@ namespace CMP1903MA012223
             //Deals one card
 
             //Decksetup(); //Create the deck
-            Card Stack = pack[-1];
-            pack.RemoveAt(-1);
+            Card Stack = pack[5];
+            pack.RemoveAt(5);
             dealt_cards.Add(Stack);
             drawncards.AddRange(dealt_cards);
             return Stack;
@@ -120,8 +121,8 @@ namespace CMP1903MA012223
             {
                 for (int i = 1; i <= amount; i++)
                 {
-                    Card Stack = pack[-1];
-                    pack.RemoveAt(-1);
+                    Card Stack = pack[5];
+                    pack.RemoveAt(5);
                     dealt_cards.Add(Stack);
                 }
                 dealt_cards.AddRange(dealt_cards);

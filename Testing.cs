@@ -34,14 +34,14 @@ namespace CMP1903MA012223
             Pack.Showcards();
 
             //No Shuffle
-            System.Console.WriteLine("\n\tThis is the No shuffle\n");
+            System.Console.WriteLine("\n\tThis is the No shuffle, Note this is the same order as the previous shuffle as it did not shuffle again afterwards\n");
             Pack.ShuffleCardPack(3);
             Pack.Showcards();
 
-            /*System.Console.WriteLine("\n\tDeal one card\n");
+            System.Console.WriteLine("\n\tDeal one card\n");
             Pack.Deal().Currentcard();
 
-            System.Console.WriteLine("\n\tShow deck\n");
+            /*System.Console.WriteLine("\n\tShow deck\n");
             Pack.Showcards();
 
             System.Console.WriteLine("\n\tDealing a number of cards at a time\n");
