@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static CMP1903MA012223.Card;
-using static CMP1903MA012223.Pack;
-using static CMP1903MA012223.Testing;
+//using static CMP1903MA012223.Card;
+//using static CMP1903MA012223.Pack;
+//using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {
@@ -15,8 +15,7 @@ namespace CMP1903MA012223
         //private static Card[] deck; // all of the playing cards, private so the cards don't get changed
 
         public static List<Card> pack = new List<Card>();
-        public static List<Card> split_deck1 = new List<Card>();
-        public static List<Card> split_deck2 = new List<Card>();
+        public static List<Card> split_deck = new List<Card>();
         public static List<Card> drawncards = new List<Card>();
         public static List<Card> dealt_cards = new List<Card>();
 
@@ -50,7 +49,7 @@ namespace CMP1903MA012223
 
             if (typeOfShuffle == 1)
             {
-                System.Console.WriteLine("You have chosen the Fisher-Yates Shuffle");
+                System.Console.WriteLine("\nYou have chosen the Fisher-Yates Shuffle\n");
                 Random rand = new Random();
                 for (int i = 0; i < pack.Count; i++)
                 {
@@ -61,27 +60,23 @@ namespace CMP1903MA012223
             }
             else if (typeOfShuffle == 2)
             {
-                System.Console.WriteLine("You have chosen the Riffle Shuffle");
+                System.Console.WriteLine("\nYou have chosen the Riffle Shuffle\n");
                 // need to divide the pack of cards into two sets
-                split_deck1.AddRange(pack.GetRange(0, 26)); //FIX THIS!!
-                split_deck2.AddRange(pack.GetRange(27,52));
 
                 int i = 0;
-                int j = 0;
-                while (i != 52)
+                while (i < (pack.Count / 2))
                 {
-                    pack[i] = split_deck1[j];
+                    split_deck.Add(pack[i]);
+                    split_deck.Add(pack[i + (pack.Count / 2)]);
                     i++;
-                    pack[i] = split_deck2[j];
-                    i++;
-                    j++;
                 }
+                pack = split_deck;
                 return true;
             }
 
             else if (typeOfShuffle == 3)
             {
-                System.Console.WriteLine("You have chosen not to shuffle the deck of cards");
+                System.Console.WriteLine("\nYou have chosen not to shuffle the deck of cards\n");
                 return true;
             }
             else

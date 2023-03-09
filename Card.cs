@@ -22,39 +22,6 @@ namespace CMP1903MA012223
         private int val;
         private int suit_;
 
-        /*public enum Cardvalues
-        {
-            two = 2, three, four, five, six, seven, eight, nine, ten, jack, queen, king, ace
-        }
-        public enum CardSuits
-        {
-            hearts,
-            spades,
-            diamonds,
-            clubs
-        }
-
-        public Cardvalues _Cardvalues { get; set; }
-        public CardSuits _CardSuits { get; set; }
-
-        public void Currentcard()
-        {
-            int enumvalue = Value;
-            var cardvalues = (Cardvalues)Value;
-            string stringValue = cardvalues.ToString();
-
-            int enumsuit = Suit;
-            var cardsuits = (CardSuits)Suit;
-            string stringSuit = cardsuits.ToString();
-
-            System.Console.WriteLine(stringValue + " of " + stringSuit);
-        }*/
-
-        //list instead of enumeration
-
-        //public static string[] cardvalues = { "ace", "two", "three", "four", "five", "six", "seven", "eight", "nine", "jack", "queen", "king" };
-        //public static string[] cardsuits = { "hearts", "spades", "diamonds", "clubs" };
-
         
         public void Currentcard()
         {

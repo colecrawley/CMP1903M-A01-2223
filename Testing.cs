@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static CMP1903MA012223.Pack;
-using static CMP1903MA012223.Card;
-using static CMP1903MA012223.Testing;
+//using static CMP1903MA012223.Pack;
+//using static CMP1903MA012223.Card;
+//using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {
@@ -33,12 +33,12 @@ namespace CMP1903MA012223
             Pack.ShuffleCardPack(2);
             Pack.Showcards();
 
-            /*//No Shuffle
+            //No Shuffle
             System.Console.WriteLine("\n\tThis is the No shuffle\n");
             Pack.ShuffleCardPack(3);
             Pack.Showcards();
 
-            System.Console.WriteLine("\n\tDeal one card\n");
+            /*System.Console.WriteLine("\n\tDeal one card\n");
             Pack.Deal().Currentcard();
 
             System.Console.WriteLine("\n\tShow deck\n");
