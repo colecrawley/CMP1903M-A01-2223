@@ -89,7 +89,6 @@ namespace CMP1903MA012223
         public static Card Deal()
         {
             //Deals one card
-
             //Decksetup(); //Create the deck
             Card Stack = pack[5];
             pack.RemoveAt(5);
@@ -111,23 +110,17 @@ namespace CMP1903MA012223
         public static List<Card> DealCard(int amount)
         {
             //Deals the number of cards specified by 'amount'
+            dealt_cards.Clear();
 
+            for (int i = 1; i <= amount; i++)
+            {
+                Card Stack = pack[5];
+                pack.RemoveAt(5);
+                dealt_cards.Add(Stack);
+            }
+            dealt_cards.AddRange(dealt_cards);
+            return dealt_cards;
             
-            if (pack.Count < amount)
-            {
-                throw new ArgumentOutOfRangeException("Impossible to draw " + amount + "cards because there are not enough cards left in the pack");
-            }
-            else
-            {
-                for (int i = 1; i <= amount; i++)
-                {
-                    Card Stack = pack[5];
-                    pack.RemoveAt(5);
-                    dealt_cards.Add(Stack);
-                }
-                dealt_cards.AddRange(dealt_cards);
-                return dealt_cards;
-            }
         }
     }
 }

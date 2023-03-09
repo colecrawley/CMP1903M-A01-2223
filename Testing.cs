@@ -41,16 +41,18 @@ namespace CMP1903MA012223
             System.Console.WriteLine("\n\tDeal one card\n");
             Pack.Deal().Currentcard();
 
-            /*System.Console.WriteLine("\n\tShow deck\n");
+            System.Console.WriteLine("\n\tShow deck\n");
             Pack.Showcards();
 
             System.Console.WriteLine("\n\tDealing a number of cards at a time\n");
-            Pack.DealCard(6);
-            for (int i = 0; i < Pack.dealt_cards.Count; i++)
+        
+            Pack.DealCard(5);
+            foreach (Card item in Pack.dealt_cards.Distinct().ToList())
             {
-                deck.Currentcard();
+                item.Currentcard();
             }
-            System.Console.WriteLine("\n\tDisplay pack\n");
+
+            /*System.Console.WriteLine("\n\tDisplay pack\n");
             Pack.Showcards();
 
             System.Console.WriteLine("\n\tDrawn cards\n");
@@ -64,6 +66,7 @@ namespace CMP1903MA012223
             {
                 deck.Currentcard();
             }*/
+
         }
     }
 }
