@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using static CMP1903MA012223.Card;
-//using static CMP1903MA012223.Pack;
-//using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {
-    class Pack //: Card
+    class Pack
     {
-        //readonly int total_cards = 52; //total number of playing cards
-        //private static Card[] deck; // all of the playing cards, private so the cards don't get changed
 
         public static List<Card> pack = new List<Card>();
         public static List<Card> split_deck = new List<Card>();
@@ -22,8 +17,6 @@ namespace CMP1903MA012223
         public Pack()
         {
             //Initialise the card pack here
-
-            //deck = new Card[total_cards]; // stores all the cards
 
             int i = 1;
             int j = 1;
@@ -89,7 +82,7 @@ namespace CMP1903MA012223
         public static Card Deal()
         {
             //Deals one card
-            //Decksetup(); //Create the deck
+
             Card Stack = pack[5];
             pack.RemoveAt(5);
             dealt_cards.Add(Stack);
@@ -102,8 +95,7 @@ namespace CMP1903MA012223
             int i = 0;
             foreach (Card card in pack)
             {
-                card.Currentcard(); //double check this
-                i++;
+                card.Currentcard();
             }
         }
 
