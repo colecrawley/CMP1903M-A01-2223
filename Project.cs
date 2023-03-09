@@ -11,7 +11,7 @@ namespace CMP1903MA012223
 	{
         static void Main(string[] args)
         {
-            Testing.testing();
+            Testing.testing(); // calling the testing function that contains all the classes and methods
             
         }
     }
