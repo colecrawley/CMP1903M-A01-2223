@@ -4,16 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//using static CMP1903MA012223.Pack;
-//using static CMP1903MA012223.Card;
-//using static CMP1903MA012223.Testing;
 
 namespace CMP1903MA012223
 {
-    static class Testing
+    internal class Testing
     {
-        static void Main(string[] args)
+        public static void testing()
         {
+            
             //Creating pack 
             Pack deck = new Pack();
 
@@ -45,28 +43,30 @@ namespace CMP1903MA012223
             Pack.Showcards();
 
             System.Console.WriteLine("\n\tDealing a number of cards at a time\n");
-        
+
             Pack.DealCard(5);
             foreach (Card item in Pack.dealt_cards.Distinct().ToList())
             {
                 item.Currentcard();
             }
 
-            /*System.Console.WriteLine("\n\tDisplay pack\n");
+            System.Console.WriteLine("\n\tDisplay current state of deck\n");
             Pack.Showcards();
 
             System.Console.WriteLine("\n\tDrawn cards\n");
-            for (int i = 0; i < Pack.drawncards.Count; i++)
+            foreach (Card item in Pack.drawncards.Distinct().ToList())
             {
-                deck.Currentcard();
+                item.Currentcard();
             }
 
             System.Console.WriteLine("\n\tDealt cards\n");
-            for (int i = 0; i < Pack.dealt_cards.Count; i++)
+            foreach (Card item in Pack.dealt_cards.Distinct().ToList())
             {
-                deck.Currentcard();
-            }*/
+                item.Currentcard();
+            }
 
+            
         }
     }
+
 }
