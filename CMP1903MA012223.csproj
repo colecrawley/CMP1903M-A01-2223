@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1A2F9CA1-E6D8-4662-B3E5-32190DD347C7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CMP1903M_A01_2223</RootNamespace>
-    <AssemblyName>CMP1903M A01 2223</AssemblyName>
+    <RootNamespace>CMP1903MA012223</RootNamespace>
+    <AssemblyName>CMP1903MA012223</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,8 +45,9 @@
   <ItemGroup>
     <Compile Include="Card.cs" />
     <Compile Include="Pack.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Testing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Project.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

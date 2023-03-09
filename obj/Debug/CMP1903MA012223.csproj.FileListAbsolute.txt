@@ -1,0 +1,7 @@
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/bin/Debug/CMP1903MA012223.exe.config
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/bin/Debug/CMP1903MA012223.exe
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/bin/Debug/CMP1903MA012223.pdb
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/obj/Debug/CMP1903MA012223.csproj.AssemblyReference.cache
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/obj/Debug/CMP1903MA012223.csproj.CoreCompileInputs.cache
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/obj/Debug/CMP1903MA012223.exe
+/Users/colecrawley/Documents/C# OOP assessment/CMP1903MA012223/CMP1903MA012223/obj/Debug/CMP1903MA012223.pdb
