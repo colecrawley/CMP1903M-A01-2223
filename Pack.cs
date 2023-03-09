@@ -40,44 +40,6 @@ namespace CMP1903MA012223
                 }
             }
         }
-
-        /*public static Card[] Getpack //retrieving cards
-        {
-            get
-            {
-                return deck; // get deck
-            }
-        }*/
-        public static void Decksetup() // creation of cards
-        {
-            /*int i = 0;
-            foreach (CardSuits s in Enum.GetValues(typeof(CardSuits)))
-            {
-                foreach (Cardvalues v in Enum.GetValues(typeof(Cardvalues)))
-                {
-                    enumdeck = deck[i];
-                    enumdeck = new Card { _CardSuits = s, _Cardvalues = v };
-                    i++; // index i should increment up to 52 cards
-                }
-            }*/
-            //chagen enum to list first
-
-            System.Console.WriteLine("What kind of shuffle do you want to use: \n1. Fisher-Yates shuffle\n2. Riffle shuffle\n3. No shuffle\n");
-            int answer = Convert.ToInt32(Console.ReadLine());
-
-            if (answer == 1)
-            {
-                ShuffleCardPack(1);
-            }
-            else if (answer == 2)
-            {
-                ShuffleCardPack(2);
-            }
-            else if (answer == 3)
-            {
-                ShuffleCardPack(3);
-            }
-        }
         
         public static bool ShuffleCardPack(int typeOfShuffle)
         {
@@ -101,12 +63,12 @@ namespace CMP1903MA012223
             {
                 System.Console.WriteLine("You have chosen the Riffle Shuffle");
                 // need to divide the pack of cards into two sets
-                split_deck1.AddRange(pack.GetRange(1, 26)); //FIX THIS!!
+                split_deck1.AddRange(pack.GetRange(0, 26)); //FIX THIS!!
                 split_deck2.AddRange(pack.GetRange(27,52));
 
                 int i = 0;
                 int j = 0;
-                while (i < 52)
+                while (i != 52)
                 {
                     pack[i] = split_deck1[j];
                     i++;
@@ -116,6 +78,7 @@ namespace CMP1903MA012223
                 }
                 return true;
             }
+
             else if (typeOfShuffle == 3)
             {
                 System.Console.WriteLine("You have chosen not to shuffle the deck of cards");

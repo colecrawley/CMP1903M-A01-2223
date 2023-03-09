@@ -21,21 +21,19 @@ namespace CMP1903MA012223
             System.Console.WriteLine("\n\tDefault arrangement\n");
             Pack.Showcards();
 
-            /*//Ask user what type of shuffle they want
-            Pack.Decksetup();
-
             //Different shuffles
+
             //Fisher-Yates shuffle
             System.Console.WriteLine("\n\tThis is the Fisher-Yates shuffle\n");
             Pack.ShuffleCardPack(1);
             Pack.Showcards();
 
-            //RIffle Shuffle
+            //Riffle Shuffle
             System.Console.WriteLine("\n\tThis is the Riffle shuffle\n");
             Pack.ShuffleCardPack(2);
             Pack.Showcards();
 
-            //No Shuffle
+            /*//No Shuffle
             System.Console.WriteLine("\n\tThis is the No shuffle\n");
             Pack.ShuffleCardPack(3);
             Pack.Showcards();
